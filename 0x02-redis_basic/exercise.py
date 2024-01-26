@@ -12,8 +12,6 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
     
-    @count_calls
-    @call_history
     def store(self, data: str or bytes or int or float) -> str:
         """takes a data argument and returns a string"""
         key = str(uuid.uuid4())
